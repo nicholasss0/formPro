@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+    db:
+        image: postgres:15
+        restart: always
+        container_name: formpro_db
+        environment:
+            POSTGRES_USER: nicholas
+            POSTGRES_PASSWORD: ricardopass
+            POSTGRES_DB: polls_db
+        ports:
+            - "5432:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+
+
+volumes:
+    postgres_data:
+            
